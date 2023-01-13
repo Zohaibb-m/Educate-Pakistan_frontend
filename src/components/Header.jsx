@@ -9,7 +9,7 @@ import User_Context from "../Context/User_Context";
 function Header(props){
     let [state,setState]=useState({courses:[]})
     const {isLogin}=useContext(Login_Context)
-    const {User}=useContext(User_Context)
+    const {User,setUser}=useContext(User_Context)
     useEffect(()=>{
         // console.log()
         async function getSubjects(){
@@ -36,6 +36,7 @@ function Header(props){
     function logout(){
         localStorage.clear();
         props.setLogin(false);
+        setUser(false);
       }
 
     let returnButton = () =>{

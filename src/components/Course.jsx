@@ -29,7 +29,8 @@ function Course(props){
         }, [])
         useEffect(()=>{async function getProgresses(){
             let progresses=[];
-            if(User){
+            if(User.progresses){
+                console.log("YESS")
             for(let i=0;i<User.progresses.length;i++){
                    await axios.get("https://educate-pakistan-server.herokuapp.com/progresses/"+User.progresses[i])
                     .then(res=>{
@@ -61,7 +62,7 @@ if(isLogin){
                 <div class="lesson">
                 <a class="lesson-name"href={"/lessons/"+lessons[i].id}>{lessons[i].title}</a>
                   <p class="lesson-description">{lessons[i].description}</p>
-                {isLogin && progress?<progress class="lesson-progress" value={progress.points} max={lessons[i].points}></progress>:<p>Login to see Progress</p>}
+                {isLogin && progress?<progress class="lesson-progress" value={progress.points} max={lessons[i].points}></progress>:<p></p>}
                 </div> 
               </div>)
         }
