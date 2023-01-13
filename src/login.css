@@ -859,7 +859,7 @@ body {
       margin-bottom: 0;
     }
   
-    .container {
+    .course-title-container {
       display: flex;
       flex-wrap: wrap;
       padding: 0 15%;
