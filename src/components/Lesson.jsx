@@ -39,6 +39,7 @@ function Lesson() {
     }
     getData() 
 }, [])
+console.log(state.lesson)
 if(!state.lesson)return(
     <div>
         Loading...
@@ -46,14 +47,60 @@ if(!state.lesson)return(
 )
 else 
     return (
-        <div>
-            <iframe width="560" height="315" src={state.lesson.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h1>Lesson Name: {state.lesson.title}</h1>
-            <p>Description: {state.lesson.description} </p>
-            <Link to={"/quizzes/"+state.lesson.quiz.id} >Quiz: {state.lesson.quiz.quizName} </Link>
-            <p>Quiz Progress: {found?found.solvedCount:"Unsolved"}</p>
-            
+        <div className="lesson-page-container">
+            <div className="lesson-page-sidebar">
+            <div className="lesson-sidebar">
+                <div className="lesson-content-container">
+                    <div className="lesson-content">
+                        <div className="course-name-container">
+                            <a className="course-name">{state.lesson.course.courseName}</a>
+                        </div>
+                        <div className="lesson-name-container">
+                            <a className="lesson-name"><span className="color-blue">Lesson </span><br />{state.lesson.title}</a>
+                        </div>
+                        <ul className="lesson-resources">
+                            <li className="lesson-resource-item active">
+                                <a href="#">
+                                    <span>
+                                        <div className="item">
+                                            Lesson Video
+                                        </div>
+                                    </span>
+                                </a>
+                            </li>
+                            <li className="lesson-resource-item">
+                                <a href="#">
+                                    <span>
+                                        <div className="item">
+                                        {state.lesson.quiz.quizName}
+                                        </div>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div className="lessons-container">
+            <div className="lesson-contents-container">
+                <div className="content-container">
+                    <div className="video-heading-container">
+                        <h3 className="video-heading">Video Lesson</h3>
+                    </div>
+                    <div className="video-container">
+                    <iframe width="100%" height="541" src={state.lesson.link}                        title="I Made Celeste but it's 3D" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/* <div>
+            <Link to={"/quizzes/"+state.lesson.quiz.id} >Quiz: {state.lesson.quiz.quizName} </Link>
+            <p>Quiz Progress: {found?found.solvedCount:"Unsolved"}</p>  
+        </div> */}
+    </div>
 );
 }
 

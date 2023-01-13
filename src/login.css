@@ -846,7 +846,7 @@ body {
       /* width: 100%; */
     }
   
-    .course-name{
+    .course-descr{
       margin-top: 0;
       color: grey;
       font-size: 1rem;
@@ -946,4 +946,195 @@ body {
         padding-left:5%
     }
     
-  
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #F7F8FA;
+    } 
+    .course {
+        height: 15vh;
+        background-color: #0B2149;
+        padding: 0 15%;
+        margin: 0;
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+        border: none;
+        /* width: 100%; */
+      }
+    
+      .course-name{
+        margin-bottom: 0;
+        color: grey;
+      }
+    
+      .lesson-name-heading{
+        color: white;
+        font-size: 2.5rem;
+        margin-top: 0;
+      }
+    
+      .lesson-page-container {
+        display: flex;
+        flex-wrap: wrap;
+        
+      }
+      
+      .lesson-page-sidebar {
+        flex: 1;
+        color: #787a7c;
+      }
+      
+      .lessons-container{
+        flex:2.5;
+        /* padding: 2%; */
+      }
+    
+      /* .container {
+        display: flex;
+        flex-wrap: wrap;
+      } */
+      
+      /* .lesson-sidebar, .lesson-container {
+        flex: 1;
+        padding: 10px;
+      } */
+      
+      .lesson-sidebar {
+        /* background-color: #f5f5f5; */
+        padding: 10px;
+      }
+      
+      table {
+        width: 100%;
+      }
+      
+      td {
+        padding: 10px;
+        border-left: 2px solid #EAEBED;
+        border-top: 2px solid #EAEBED;
+        border-bottom: 2px solid #EAEBED;
+      }
+      
+      .lesson-content-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        background-color: white;
+        border: 1px solid #EAEBED;
+        color: #21242C;
+        margin: 2%;
+        border-radius: 8%;
+        
+      }
+    
+      .lesson-contents-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        background-color: white;
+        border: 1px solid #EAEBED;
+        color: #21242C;
+        margin: 2%;
+        
+      }
+      
+      .lesson-description {
+          /* margin-left: 2%; */
+      }
+      
+      .course-name{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #17181c;
+        font-weight: 400;
+        display: inline-block;
+        margin: auto;
+        padding: 2%;
+      }
+      .lesson-name{
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #17181c;
+        font-weight: 500;
+        display: inline-block;
+        margin: auto;
+        padding: 2%;
+      }
+    
+      .lesson-content {
+          padding: 20px;
+          /* text-align: center; */
+          width: 100%;
+      }
+    
+      .course-name-container{
+        border-bottom: 2px solid #EAEBED;
+        /* display:flex; */
+        text-align: center;
+    
+      }
+    
+      .lesson-name-container{
+        text-align: center;
+    
+      }
+    
+      .lesson-resources {
+        margin-top: 10px;
+        list-style: none;
+        padding: 0;
+    }
+      .color-blue{
+        color: blue !important;
+      }
+      
+    /* .lesson-resource-item{
+      height: 50px;
+      padding: 2%;
+    } */
+    .lesson-resource-item a{
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0;
+      margin-top:10px ;
+    }  
+    li.active{
+      border-left: 2px solid blue;
+      background-color: #dde7f8;
+    }
+    
+    .item:hover{
+      background-color: #bcbcbc;
+    }
+    
+    .item{
+      /* width: 100%; */
+      height: 100%;
+      padding: 5%;
+    }
+    
+    .content-container{
+      /* height: 100; */
+      width: 100%;
+    }
+    .video-heading-container{
+      text-align: center;
+    }
+    
+    .video-heading{
+      display: inline-block;
+      margin: auto;
+      padding: 3%;
+    }
+    
+    .video-container{
+      padding: 3%;
+    }

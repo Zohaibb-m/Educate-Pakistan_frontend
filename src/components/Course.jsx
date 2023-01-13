@@ -140,7 +140,7 @@ if(isLogin){
             <div>
                 <div className="course">
                     <h1 className="lesson-name-heading">{state.course.courseName}</h1>
-                    <h4 className="course-name">{state.course.courseDescription}</h4>
+                    <h4 className="course-descr">{state.course.courseDescription}</h4>
                 </div>
                 <div className="course-title-container">
                 <div className="lesson-sidebar">
