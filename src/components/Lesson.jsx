@@ -27,7 +27,7 @@ function Lesson() {
         })
         }
         setChecked(true)
-    }
+        }
         useEffect(()=>{async function getData(){
         await Axios.get("https://educate-pakistan-server.herokuapp.com/lessons/"+lessonID)
             .then((response)=>{
@@ -36,16 +36,17 @@ function Lesson() {
                 })
             })
         
-    }
-    getData() 
-}, [])
-console.log(state.lesson)
-if(!state.lesson)return(
-    <div>
-        Loading...
-    </div>
-)
-else 
+        }
+        getData() 
+    }, [])
+    
+    console.log(state.lesson)
+    if(!state.lesson)return(
+        <div>
+            Loading...
+        </div>
+    )
+    else 
     return (
         <div className="lesson-page-container">
             <div className="lesson-page-sidebar">
