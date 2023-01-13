@@ -48,26 +48,40 @@ if(isLogin){
 
 
     function renderLessons(){
-        // let i=0
-        // console.log(progresses)
-        // return state.course.lessons.map((lesson,index)=>(
-        //     <div>
-        //     <a href={"/lessons/"+lesson.id}>{lesson.title}</a>
-        //     <p>Progress: {(progresses[i].lessonID===lesson.id)?console.log(progresses[i],"progressa"):console.log(progresses[i],"progress")}/{lesson.points}{console.log(progresses[i])}</p>
-        //     <p>{lesson.description}</p>
-        //     </div>
-        // ))
         let lessons=state.course.lessons
         let lessonsR=[] 
         for(let i=0;i<state.course.lessons.length;i++){
             let progress=progresses.find(progress=>(progress.lessonID===lessons[i].id))
-            lessonsR.push(<div>
-                     <a href={"/lessons/"+lessons[i].id}>{lessons[i].title}</a>
-                     <p>Progress: {(progress===undefined)?0:progress.points}/{lessons[i].points}{console.log(progresses[i])}</p>
-                     <p>{lessons[i].description}</p>
-                     </div>)
+            lessonsR.push(
+                <div class="lesson-container">
+                <div class="lesson">
+                <a class="lesson-name"href={"/lessons/"+lessons[i].id}>{lessons[i].title}</a>
+                  <p class="lesson-description">{lessons[i].description}</p>
+                <progress class="lesson-progress" value={progress.points} max={lessons[i].points}></progress>
+                </div> 
+              </div>)
         }
         console.log(lessonsR)
+        return (
+            <div>
+                {lessonsR}
+            </div>
+        )
+    }
+
+    function renderLessonNames(){
+        let lessons=state.course.lessons
+        let lessonsR=[]
+        // lessonsR.push(<React.Fragment><tr><td className="tdd">kdjvbdjvbjvbfkjbvfjkvbdfjbvfkjvbfk</td></tr></React.Fragment>)
+        for(let i=0;i<state.course.lessons.length;i++){
+            lessonsR.push(
+                <React.Fragment>
+                    <tr>
+                        <td>{lessons[i].title}</td>
+                    </tr>
+                </React.Fragment>
+                    )
+        }
         return (
             <div>
                 {lessonsR}
@@ -119,12 +133,26 @@ if(isLogin){
     else 
         return (
             <div>
-                <img src={require("../images/"+String(state.course.courseImage))} />
-                <h1>Course Name: {state.course.courseName}</h1>
-                {found===undefined?<div><button onClick={() => enrollCourse()}>Enroll</button><h3 className="enrollLogin">{msg}</h3></div>:<h3>You have already enrolled</h3>}
-                <p>Description: {state.course.courseDescription} </p>
-                {(loading)?<p>loading</p>:renderLessons()}
+                <div className="course">
+                    <h1 className="lesson-name-heading">{state.course.courseName}</h1>
+                    <h4 className="course-name">{state.course.courseDescription}</h4>
+                </div>
+                <div className="container">
+                <div className="lesson-sidebar">
+                <div class="sidebar">
+                    <h2 className="lesson-sidebar-heading">Lessons</h2>
+                    <table className="table">
+                    {(loading)?<p>loading</p>:renderLessonNames()}
+                    </table>
+                    </div>
+                </div>
+                <div className="lessons-container">
+                    {(loading)?<p>loading</p>:renderLessons()}
+                </div>
+                </div>
+                {found===undefined?<div><button onClick={() => enrollCourse()}>Enroll</button><h3 className="enrollLogin">{msg}</h3></div>:<h3>You have already enrolled</h3>}               
             </div>
+                
     );
 }
 

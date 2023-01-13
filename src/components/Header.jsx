@@ -45,7 +45,7 @@ function Header(props){
                 <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle navi" data-bs-toggle="dropdown"><i className="fa fa-user" ></i> Hey , {User.firstname}</a>
                             <div className="dropdown-menu dd-men">
-                                <a href="#" className="dropdown-item "><i className="fa fa-user" ></i> Your Profile</a>
+                                <a href="/profile" className="dropdown-item "><i className="fa fa-user" ></i> Your Profile</a>
                                 <a href="#" className="dropdown-item"><i className="fa fa-gear" ></i> Settings</a><hr />
                                 {/* <Link onClick={logout} to="/" className="dropdown-item">Log Out</Link> */}
                                 <a href="/" className="dropdown-item" onClick={logout}>Log Out</a>

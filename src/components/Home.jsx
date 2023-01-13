@@ -11,13 +11,7 @@ function Home(){
   useEffect(()=>{
     setUser(User)
   },[isLogin])
-  if (isLogin)
-    return (
-      <div>
-    <User_Dashboard />
-    </div>
-    );
-  else return(
+  return(
     <div>
         <h1>Home Page </h1>
         <br />

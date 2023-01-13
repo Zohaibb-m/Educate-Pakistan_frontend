@@ -29,7 +29,7 @@ function Login(){
             setLogin(true)
             
         } catch (err) {
-            err.response.data.msg && setErr(err.response.data.msg)
+            err.response.data.data[0].messages[0].message && setErr("Invalid Email or Password!")
         }
     }
 

@@ -12,6 +12,7 @@ import User_Context from "./Context/User_Context"
 import Lesson from "./components/Lesson"
 import axios from "axios";
 import Quiz from "./components/Quiz";
+import User_Dashboard from "./components/User_Dashboard";
 function App() {
   var [isLogin,setLogin]=useState(false);
   var [User,setUser]=useState({})
@@ -52,6 +53,7 @@ function App() {
     <Route path="/courses/:courseID" element={<Course />} />
     <Route path="/lessons/:lessonID" element={<Lesson />} />
     <Route path="/quizzes/:quizID" element={<Quiz />} />
+    <Route path="/profile" element={<User_Dashboard />} />
     </Routes>
     </Router>
     <Footer />
