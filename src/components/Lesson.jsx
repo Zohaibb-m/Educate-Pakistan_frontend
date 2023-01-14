@@ -15,8 +15,8 @@ function Lesson() {
     })
     let [found,setFound]=useState(false)
     let [checked,setChecked]=useState(false)
-        if(isLogin && state.lesson && !checked){
-        for (let i=0;i<User.progresses.length;i++){
+    if(isLogin && state.lesson && !checked){
+    for (let i=0;i<User.progresses.length;i++){
         let prog=Axios.get("https://educate-pakistan-server.herokuapp.com/progresses/"+User.progresses[i])
         .then(response=>{
             console.log("res",response)
@@ -26,9 +26,10 @@ function Lesson() {
             }
             })
         }
-    }
         setChecked(true)
-        useEffect(()=>{async function getData(){
+    }
+    useEffect(()=>{
+        async function getData(){
         await Axios.get("https://educate-pakistan-server.herokuapp.com/lessons/"+lessonID)
             .then((response)=>{
                 setState({
@@ -39,33 +40,6 @@ function Lesson() {
         }
         getData() 
     }, [])
-        useEffect(()=>{
-            function onVideoClick(){
-                document.querySelector(".content-container").innerHTML=`
-                <div class="video-heading-container">
-                <h3 class="video-heading">Video Lesson</h3>
-                </div>
-                <div class="video-container">
-                <iframe width="100%" height="541" src=${state.lesson.link} title="I Made Celeste but it's 3D" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-                </div>
-                `
-            }
-            
-            function onQuizClick(){
-                document.querySelector(".content-container").innerHTML=`
-                <h1>Quiz</h1>`;
-            } 
-
-            function addEvents(){
-                document.getElementById("quiz-btn").addEventListener("click",onQuizClick)
-                document.getElementById("video-btn").addEventListener("click",onVideoClick)
-            }
-
-            if(state.lesson)addEvents();
-        },[state.lesson])
-    console.log(state.lesson)
     if(!state.lesson)return(
         <div>
             Loading...
@@ -86,7 +60,7 @@ function Lesson() {
                         </div>
                         <ul className="lesson-resources">
                             <li className="lesson-resource-item active">
-                                <a id="video-btn" href={"/lessons/${}"+state.lesson.lessonID} >
+                                <a id="video-btn" href={"/lessons/"+state.lesson.lessonID} >
                                     <span>
                                         <div className="item">
                                             Lesson Video
@@ -124,10 +98,6 @@ function Lesson() {
                 </div>
             </div>
         </div>
-        {/* <div>
-            <Link to={"/quizzes/"+state.lesson.quiz.id} >Quiz: {state.lesson.quiz.quizName} </Link>
-            <p>Quiz Progress: {found?found.solvedCount:"Unsolved"}</p>  
-        </div> */}
     </div>
 );
 }
