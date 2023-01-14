@@ -1172,3 +1172,69 @@ body {
       margin-left:80%;
       margin-top: 10%;
   }
+
+  svg {
+    width: 100%;
+  }
+  .center{
+      margin-top: 5em;
+      margin-bottom: 1.5em;
+      padding: 3em;
+  }
+  .center-text{
+      text-align: center;
+  }
+  .b-grey{
+      border-top: 2px solid aqua;
+      background-color:  #f2f2f2;
+      border-top-right-radius:50%;
+border-bottom-right-radius:0;
+border-bottom-left-radius:50% 45%;
+border-top-left-radius:25% 15%;
+
+/* 装飾用 */
+filter: drop-shadow(20px 15px 0px aqua);
+      
+  }
+  
+.circle {
+flex-shrink: 0;
+color: #ffd;
+padding: 90px;
+
+
+mix-blend-mode: multiply;
+}
+.b1 {
+background: #ffc30f;
+border-radius: 50% 37% 25% 75% / 71% 30% 70% 29%;
+}
+.b2 {
+background: #ffc30f;
+border-radius: 57% 43% 40% 60% / 71% 48% 52% 29%;
+}
+
+
+.c1 {
+padding: 2.3em;
+background: #ffc30f;
+border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+.c2 {
+padding: 2.3em;
+background: #ff5f33;
+border-radius: 45% 37% 25% 75% / 71% 30% 70% 29%;
+}
+.c3 {
+padding: 2.3em;
+background: #8d3758;
+border-radius: 57% 43% 40% 60% / 71% 48% 52% 29%;
+}
+.or{
+background-color: #ff6600;
+border: 1px solid #ff6600;
+}
+.or:hover{
+background-color: #ff6600;
+border: 1px solid #ff6600;
+}
