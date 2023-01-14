@@ -5,7 +5,10 @@ body {
   font-weight: normal;
   background: white;
   color: gray; }
-
+.pad-15{
+  padding:15%;
+  background-color: pink !important;
+}
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -258,7 +261,8 @@ h1, h2, h3, h4, h5,
         }
     }
     .nav-bg{
-        background-color: #8DD7CF  !important;
+        background-color: pink  !important;
+        padding: 15%;
     }
     .dd-men{
         margin-top:0px !important;

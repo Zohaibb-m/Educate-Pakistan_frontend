@@ -44,17 +44,7 @@ function User_Dashboard(props){
                         <div className="col-md-6">
                           <div className="panel">
                               <div className="panel-body">
-                                  <div className="bio-chart">
-                                    <div className="progress blue">
-                                        <span className="progress-left">
-                                            <span className="progress-bar"></span>
-                                        </span>
-                                        <span className="progress-right">
-                                            <span className="progress-bar"></span>
-                                        </span>
-                                        <div className="progress-value">40%</div>
-                                    </div>
-                                  </div>
+                 
                                   <div className="bio-desk">
                                       <h2 className="green" >{Course.courseName}</h2>
                                       <p>Points: {userPoints}</p>
@@ -104,10 +94,10 @@ function User_Dashboard(props){
         
               <div className="panel">
                   <div className="bio-graph-heading">
-                      Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
+                  "Learning is the only path to true growth, embrace new knowledge and watch yourself flourish."
                   </div>
                   <div className="panel-body bio-graph-info">
-                      <h1>Bio Graph</h1>
+                      <h1>User Info</h1>
                       <div className="row">
                           <div className="bio-row">
                               <p><span>First Name </span>: {User.firstname}</p>
