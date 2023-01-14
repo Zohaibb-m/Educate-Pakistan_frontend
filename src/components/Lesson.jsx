@@ -15,8 +15,9 @@ function Lesson() {
     })
     let [found,setFound]=useState(false)
     let [checked,setChecked]=useState(false)
-    if(isLogin && state.lesson && !checked){
-    for (let i=0;i<User.progresses.length;i++){
+    useEffect(()=>{
+        if(isLogin && state.lesson && !checked){
+        for (let i=0;i<User.progresses.length;i++){
         let prog=Axios.get("https://educate-pakistan-server.herokuapp.com/progresses/"+User.progresses[i])
         .then(response=>{
             console.log("res",response)
@@ -24,10 +25,11 @@ function Lesson() {
                 setFound(response.data)
                 console.log(found)
             }
-        })
+            })
         }
+    }
+    },[])
         setChecked(true)
-        }
         useEffect(()=>{async function getData(){
         await Axios.get("https://educate-pakistan-server.herokuapp.com/lessons/"+lessonID)
             .then((response)=>{
@@ -39,7 +41,32 @@ function Lesson() {
         }
         getData() 
     }, [])
-    
+        useEffect(()=>{
+            function onVideoClick(){
+                document.querySelector(".content-container").innerHTML=`
+                <div class="video-heading-container">
+                <h3 class="video-heading">Video Lesson</h3>
+                </div>
+                <div class="video-container">
+                <iframe width="100%" height="541" src=${state.lesson.link} title="I Made Celeste but it's 3D" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+                </div>
+                `
+            }
+            
+            function onQuizClick(){
+                document.querySelector(".content-container").innerHTML=`
+                <h1>Quiz</h1>`;
+            } 
+
+            function addEvents(){
+                document.getElementById("quiz-btn").addEventListener("click",onQuizClick)
+                document.getElementById("video-btn").addEventListener("click",onVideoClick)
+            }
+
+            if(state.lesson)addEvents();
+        },[state.lesson])
     console.log(state.lesson)
     if(!state.lesson)return(
         <div>
@@ -57,11 +84,11 @@ function Lesson() {
                             <a className="course-name">{state.lesson.course.courseName}</a>
                         </div>
                         <div className="lesson-name-container">
-                            <a className="lesson-name"><span className="color-blue">Lesson </span><br />{state.lesson.title}</a>
+                            <p className="lesson-name"><span className="color-blue">Lesson </span><br />{state.lesson.title}</p>
                         </div>
                         <ul className="lesson-resources">
                             <li className="lesson-resource-item active">
-                                <a href="#">
+                                <a id="video-btn" href={"/lessons/${}"+state.lesson.lessonID} >
                                     <span>
                                         <div className="item">
                                             Lesson Video
@@ -70,10 +97,12 @@ function Lesson() {
                                 </a>
                             </li>
                             <li className="lesson-resource-item">
-                                <a href="#">
+                                <a id="quiz-btn" href={"/quizzes/"+state.lesson.quiz.id} >
                                     <span>
                                         <div className="item">
                                         {state.lesson.quiz.quizName}
+                                        <p>      </p>
+                                        {found?<progress value={found.solvedCount} max="5"></progress>:<p>Un Attempted</p>}
                                         </div>
                                     </span>
                                 </a>
@@ -86,14 +115,14 @@ function Lesson() {
         <div className="lessons-container">
             <div className="lesson-contents-container">
                 <div className="content-container">
-                    <div className="video-heading-container">
-                        <h3 className="video-heading">Video Lesson</h3>
-                    </div>
-                    <div className="video-container">
-                    <iframe width="100%" height="541" src={state.lesson.link}                        title="I Made Celeste but it's 3D" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
+                <div class="video-heading-container">
+                <h3 class="video-heading">Video Lesson</h3>
+                </div>
+                <div class="video-container">
+                <iframe width="100%" height="541" src={state.lesson.link} title="I Made Celeste but it's 3D" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+                </div>
                 </div>
             </div>
         </div>

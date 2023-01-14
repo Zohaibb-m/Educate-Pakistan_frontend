@@ -1139,3 +1139,28 @@ body {
     .video-container{
       padding: 3%;
     }
+
+    .quiz-container{
+      height:700px;
+      width: 100%;
+  }
+  .quiz-question{
+      margin: 0 0 0 8%; 
+      font-size: 2rem;
+  }
+  .quiz-name{
+      font-size: 2.5rem;
+      margin: 0 0 0 5%;
+  }
+
+  .quiz-option{
+      font-size: 1.3rem;
+      margin: 5% 0 0 8%;
+      width: 13%;
+  }
+
+  .next-button{
+      font-size: 1.5rem;
+      margin-left:80%;
+      margin-top: 10%;
+  }
