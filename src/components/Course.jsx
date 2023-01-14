@@ -141,6 +141,7 @@ if(isLogin){
                 <div className="course">
                     <h1 className="lesson-name-heading">{state.course.courseName}</h1>
                     <h4 className="course-descr">{state.course.courseDescription}</h4>
+                    {found===undefined?<div><button className="btn btn-outline-dark" onClick={() => enrollCourse()}>Enroll</button><h5 className="enrollLogin">{msg}</h5></div>:<h5>You have already enrolled</h5>}               
                 </div>
                 <div className="course-title-container">
                 <div className="lesson-sidebar">
@@ -155,7 +156,7 @@ if(isLogin){
                     {(loading)?<p>loading</p>:renderLessons()}
                 </div>
                 </div>
-                {found===undefined?<div><button onClick={() => enrollCourse()}>Enroll</button><h3 className="enrollLogin">{msg}</h3></div>:<h3>You have already enrolled</h3>}               
+                
             </div>
                 
     );
