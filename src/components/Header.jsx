@@ -63,10 +63,10 @@ function Header(props){
     }
 
   return (
-    <div className="m-6">
+    <div className="m-6 pad-15">
     <nav className="navbar navbar-expand-lg navbar-light bg-light nav-bg">
         <div className="container-fluid">
-            <a className="navbar-brand abs" href="#">EDUCATE PAKISTAN</a>
+            <a className="navbar-brand abs" href="/">EDUCATE PAKISTAN</a>
             <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -78,9 +78,9 @@ function Header(props){
                             {returnCourses()}
                         </div>
                     </div>
-                    <a href="/" className="nav-item nav-link navi">Home</a>
+                    {/*<a href="/" className="nav-item nav-link navi">Home</a>
                     <a href="#" className="nav-item nav-link navi">About</a>
-                    <a href="#" className="nav-item nav-link navi">Contact Us</a>
+  <a href="#" className="nav-item nav-link navi">Contact Us</a>*/}
                 </div>
                     {returnButton()}
             </div> 

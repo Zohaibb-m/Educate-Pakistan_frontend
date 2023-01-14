@@ -261,10 +261,18 @@ h1, h2, h3, h4, h5,
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
+            color: #ff6600 !important;
+            font-size: 2em;
         }
     }
+    .navbar-light{
+      color: #ff6600 !important;
+    }
     .nav-bg{
-        background-color: #8DD7CF  !important;
+        background-color: white  !important;
+        padding: 1% !important;
+        border-bottom: 1px solid gray;
+        
     }
     .dd-men{
         margin-top:0px !important;
@@ -321,7 +329,7 @@ h1, h2, h3, h4, h5,
       display: table;
   }
   .profile-nav .user-heading {
-      background: #8DD7CF;
+      
       color: #fff;
       border-radius: 4px 4px 0 0;
       -webkit-border-radius: 4px 4px 0 0;
@@ -377,7 +385,7 @@ h1, h2, h3, h4, h5,
   
   .profile-nav ul > li > a:hover, .profile-nav ul > li > a:focus, .profile-nav ul li.active  a {
       background: #f8f7f5 !important;
-      border-left: 5px solid #8DD7CF;
+      border-left: 5px solid #ff6600;
       color: #89817f !important;
   }
   
@@ -416,7 +424,7 @@ h1, h2, h3, h4, h5,
   }
   
   .bio-graph-heading {
-      background: #8DD7CF;
+      background: #ff6600;
       color: #fff;
       text-align: center;
       font-style: italic;

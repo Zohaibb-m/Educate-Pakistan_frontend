@@ -9,7 +9,7 @@ function Footer(){
           >
     <section
              className="d-flex justify-content-between text-black"
-             style={{backgroundColor: "#8DD7CF",padding:"1rem"}}
+             style={{backgroundColor: "#ff6600",padding:"1rem"}}
              >
 
       <div className="me-5">
@@ -106,10 +106,10 @@ function Footer(){
             <hr
                 className="mb-4 mt-0 d-inline-block mx-auto hr-inline"
                 />
-            <p><i className="fa fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i className="fa fa-envelope mr-3"></i> info@example.com</p>
-            <p><i className="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i className="fa fa-print mr-3"></i> + 01 234 567 89</p>
+            <p><i className="fa fa-home mr-3"></i> Al-Falah College Opp. LGH, LHR 54000, PK</p>
+            <p><i className="fa fa-envelope mr-3"></i> info@educatepakistan.com</p>
+            <p><i className="fa fa-phone mr-3"></i> +92 303 5954090</p>
+            <p><i className="fa fa-print mr-3"></i> +92 314 4209956</p>
           </div>
     
         </div>
