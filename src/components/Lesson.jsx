@@ -15,7 +15,6 @@ function Lesson() {
     })
     let [found,setFound]=useState(false)
     let [checked,setChecked]=useState(false)
-    useEffect(()=>{
         if(isLogin && state.lesson && !checked){
         for (let i=0;i<User.progresses.length;i++){
         let prog=Axios.get("https://educate-pakistan-server.herokuapp.com/progresses/"+User.progresses[i])
@@ -28,7 +27,6 @@ function Lesson() {
             })
         }
     }
-    },[])
         setChecked(true)
         useEffect(()=>{async function getData(){
         await Axios.get("https://educate-pakistan-server.herokuapp.com/lessons/"+lessonID)
